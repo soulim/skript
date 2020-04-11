@@ -4,7 +4,7 @@ on:
     tags:
     - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 jobs:
-  build:
+  release:
     name: Upload a release asset
     runs-on: ubuntu-latest
     steps:
@@ -38,3 +38,14 @@ jobs:
           asset_path: ./skript_${{ steps.prepare-build.outputs.version }}.tar.gz
           asset_name: skript_${{ steps.prepare-build.outputs.version }}.tar.gz
           asset_content_type: application/gzip
+  homebrew:
+      name: Bump Homebrew formula
+      runs-on: ubuntu-latest
+      steps:
+        - uses: mislav/bump-homebrew-formula-action@v1
+          if: "!contains(github.ref, '-')" # skip prereleases
+          with:
+            homebrew-tap: soulim/homebrew-tools
+            formula-name: skript
+          env:
+            COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
