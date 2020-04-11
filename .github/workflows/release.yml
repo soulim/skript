@@ -46,5 +46,5 @@ jobs:
         with:
           homebrew-tap: soulim/homebrew-tools
           formula-name: skript
-          download-url: ${{ steps.create-release.outputs.upload_url }}
+          download-url: ${{ steps.upload-release-asset.outputs.browser_download_url }}
           commit-message: Release {{formulaName}} v{{version}}
