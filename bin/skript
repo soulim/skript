@@ -1,3 +1,10 @@
 #!/usr/bin/env sh
 
-echo "Hello, world"
+case  $1  in
+    help|--help|-h)
+        echo "Usage: comin soon"
+        ;;
+    *)
+        echo "Hello, world"
+        ;;
+esac
