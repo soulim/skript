@@ -38,14 +38,13 @@ jobs:
           asset_path: ./skript_${{ steps.prepare-build.outputs.version }}.tar.gz
           asset_name: skript_${{ steps.prepare-build.outputs.version }}.tar.gz
           asset_content_type: application/gzip
-  homebrew:
-      name: Bump Homebrew formula
-      runs-on: ubuntu-latest
-      steps:
-        - uses: mislav/bump-homebrew-formula-action@v1
-          if: "!contains(github.ref, '-')" # skip prereleases
-          with:
-            homebrew-tap: soulim/homebrew-tools
-            formula-name: skript
-          env:
-            COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
+      - name: Bump Homebrew formula
+        uses: mislav/bump-homebrew-formula-action@v1
+        if: "!contains(github.ref, '-')" # skip prereleases
+        env:
+          COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
+        with:
+          homebrew-tap: soulim/homebrew-tools
+          formula-name: skript
+          download-url: ${{ steps.create-release.outputs.upload_url }}
+          commit-message: Release {{formulaName}} v{{version}}
