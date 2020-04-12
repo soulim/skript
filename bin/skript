@@ -1,10 +1,23 @@
 #!/usr/bin/env sh
 
-case  $1  in
+# bin/skript <subcommand>: Bootstraps scripts according to
+#                          the normalized script pattern
+
+set -o errexit   # Always exit on error
+set -o nounset   # Treat unset variables as errors
+# set -o xtrace    # Print a trace of simple commands
+
+cd "$(dirname "$0")/.."
+
+case  ${1:-help}  in
+    setup)
+        libexec/setup
+        ;;
     help|--help|-h)
-        echo "Usage: comin soon"
+        libexec/help
         ;;
     *)
-        echo "Hello, world"
+        echo "Error: unknown subcommand or option '$@'"
+        exit 1
         ;;
 esac

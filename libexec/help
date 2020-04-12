@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+# bin/skript help: Prints usage instructions.
+
+set -o errexit   # Always exit on error
+set -o nounset   # Treat unset variables as errors
+
+read -d="" message << EOF || true
+Usage: skript <command>
+
+Commands:
+
+    setup           Prints the source of `setup` script.
+                    See https://github.com/github/scripts-to-rule-them-all#scriptsetup
+    help            Prints this message.
+EOF
+
+echo "$message"
