@@ -10,7 +10,7 @@ Usage: skript <command>
 
 Commands:
 
-    setup           Prints the source of `setup` script.
+    setup           Prints the source of 'setup' script.
                     See https://github.com/github/scripts-to-rule-them-all#scriptsetup
     help            Prints this message.
 EOF
