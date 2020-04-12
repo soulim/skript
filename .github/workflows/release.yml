@@ -16,7 +16,7 @@ jobs:
           GITHUB_REF: ${{ github.ref }}
         run: |
           version=${GITHUB_REF#refs/tags/v}
-          tar -cvzf skript_${version}.tar.gz bin/ README.md LICENSE
+          tar -cvzf skript_${version}.tar.gz bin/ libexec/ README.md LICENSE
           echo "::set-output name=version::${version}"
       - name: Create a release
         id: create-release
