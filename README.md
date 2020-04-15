@@ -4,7 +4,7 @@ A command-line tool to bootstrap scripts according to [the normalized script pat
 
 ## Install
 
-```ShellSession
+```shell
 brew tap soulim/tools
 brew install skript
 ```
@@ -12,7 +12,7 @@ brew install skript
 or if you do not want to add the whole `soulim/tools` tap and interested only
 in `script` tool:
 
-```ShellSession
+```shell
 brew install soulim/tools/skript
 ```
 
@@ -20,7 +20,7 @@ brew install soulim/tools/skript
 
 Bootstrap a [`setup` script](https://github.com/github/scripts-to-rule-them-all#scriptsetup):
 
-```
+```shell
 skript setup
 ```
 
