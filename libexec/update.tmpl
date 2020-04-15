@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# script/update: Update application to run for its current checkout.
+
+set -o errexit   # Always exit on error
+set -o nounset   # Treat unset variables as errors
+set -o xtrace    # Print a trace of simple commands
+
+cd "$(dirname "$0")/.."
+
+script/bootstrap
+
+# TODO: Add update steps here

@@ -18,10 +18,10 @@ brew install soulim/tools/skript
 
 ## Usage
 
-Bootstrap a [`setup` script](https://github.com/github/scripts-to-rule-them-all#scriptsetup):
+Bootstrap [`script/setup` script](https://github.com/github/scripts-to-rule-them-all#scriptsetup):
 
 ```shell
-skript setup
+skript init setup
 ```
 
 Use `script help` to print the usage instructions at any time.

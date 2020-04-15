@@ -9,12 +9,9 @@ set -o nounset   # Treat unset variables as errors
 
 cd "$(dirname "$(realpath $0)")/.."
 
-case  ${1:-help}  in
-    setup)
-        libexec/setup
-        ;;
-    bootstrap)
-        libexec/bootstrap
+case ${1:-help} in
+    init)
+        libexec/init ${2:-all}
         ;;
     help|--help|-h)
         libexec/help

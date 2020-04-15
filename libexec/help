@@ -10,7 +10,13 @@ Usage: skript <command>
 
 Commands:
 
-    setup           Prints the source of 'setup' script.
+    init <name>     Bootstraps a script in 'script' directory. Following scripts
+                    are supported: setup, bootstrap, test, update.
+
+                    Example:
+
+                        skript init setup
+
                     See https://github.com/github/scripts-to-rule-them-all#scriptsetup
     help            Prints this message.
 EOF

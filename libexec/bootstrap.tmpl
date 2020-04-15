@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# script/bootstrap: Resolve all dependencies that the application requires to
+#                   run.
+
+set -o errexit   # Always exit on error
+set -o nounset   # Treat unset variables as errors
+set -o xtrace    # Print a trace of simple commands
+
+cd "$(dirname "$0")/.."
+
+# TODO: Add bootstrap steps here

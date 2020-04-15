@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+# bin/skript init: Initializes script from the template.
+
+set -o errexit   # Always exit on error
+set -o nounset   # Treat unset variables as errors
+
+case ${1} in
+    setup|bootstrap|update|test)
+        tmpl=$(cat $(dirname "$(realpath $0)")/$1.tmpl)
+        dest="$PWD/script/$1"
+
+        mkdir -p "$(dirname $dest)"
+
+        echo "$tmpl" > "$dest"
+        chmod +x "$dest"
+        ;;
+    *)
+        echo "Error: unknown script type '$@'"
+        exit 1
+        ;;
+esac
