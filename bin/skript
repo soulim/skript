@@ -7,7 +7,7 @@ set -o errexit   # Always exit on error
 set -o nounset   # Treat unset variables as errors
 # set -o xtrace    # Print a trace of simple commands
 
-cd "$(dirname "$0")/.."
+cd "$(dirname "$(realpath $0)")/.."
 
 case  ${1:-help}  in
     setup)
