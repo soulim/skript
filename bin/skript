@@ -11,7 +11,7 @@ cd "$(dirname "$(realpath $0)")/.."
 
 case ${1:-help} in
     init)
-        libexec/init ${2:-all}
+        libexec/init ${2}
         ;;
     help|--help|-h)
         libexec/help
