@@ -13,6 +13,9 @@ case  ${1:-help}  in
     setup)
         libexec/setup
         ;;
+    bootstrap)
+        libexec/bootstrap
+        ;;
     help|--help|-h)
         libexec/help
         ;;

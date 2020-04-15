@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# bin/skript setup: Prints the source of `setup` script.
+# bin/skript bootstrap: Prints the source of `bootstrap` script.
 
 set -o errexit   # Always exit on error
 set -o nounset   # Treat unset variables as errors
@@ -8,17 +8,16 @@ set -o nounset   # Treat unset variables as errors
 read -d="" tmpl << EOF || true
 #!/usr/bin/env sh
 
-# script/setup: Set up application for the first time after cloning, or set it
-#               back to the initial first unused state.
+# script/bootstrap: Resolve all dependencies that the application requires to
+#                   run.
 
 set -o errexit   # Always exit on error
 set -o nounset   # Treat unset variables as errors
 set -o xtrace    # Print a trace of simple commands
 
-script/bootstrap
 EOF
 
 mkdir -p script
 
-echo "$tmpl" > script/setup
-chmod +x script/setup
+echo "$tmpl" > script/bootstrap
+chmod +x script/bootstrap
