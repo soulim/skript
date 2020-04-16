@@ -10,7 +10,7 @@ brew install skript
 ```
 
 or if you do not want to add the whole `soulim/tools` tap and interested only
-in `script` tool:
+in `skript` tool:
 
 ```shell
 brew install soulim/tools/skript
@@ -24,7 +24,7 @@ Bootstrap [`script/setup` script](https://github.com/github/scripts-to-rule-them
 skript init setup
 ```
 
-Use `script help` to print the usage instructions at any time.
+Use `skript help` to print the usage instructions at any time.
 
 ## Contributing
 
