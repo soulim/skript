@@ -24,6 +24,10 @@ Bootstrap [`script/setup` script](https://github.com/github/scripts-to-rule-them
 skript init setup
 ```
 
+Other scripts according to the normalized script pattern could be bootstrapped
+using `skript init <name>`. Following names are supported: `setup`,
+`bootstrap`, `test`, `update`.
+
 Use `skript help` to print the usage instructions at any time.
 
 ## Contributing
